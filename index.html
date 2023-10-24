@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      input {
+        outline: none;
+      }
+      .layout {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .intro {
+        text-align: start;
+        width: 27%;
+        h2 {
+          padding-bottom: 1rem;
+          font-weight: bolder;
+        }
+      }
+      .form {
+        width: 70%;
+        padding: 2rem;
+
+        form {
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: row;
+
+          .input {
+            position: relative;
+            padding: 1rem;
+
+            input {
+              padding: 0.5rem;
+              max-width: 20rem;
+              width: 80vw;
+            }
+
+            label {
+              position: absolute;
+              top: 1.5rem;
+              left: 1.7rem;
+              pointer-events: none;
+              opacity: 0.5;
+            }
+          }
+          .submitbtn {
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: center;
+            #submit {
+              margin-bottom: 1rem;
+              padding: 1rem 2rem;
+              background-color: rgb(32, 32, 212);
+              border: none;
+              color: white;
+              &:hover {
+                background-color: blueviolet;
+              }
+            }
+          }
+        }
+      }
+      .input input:focus ~ label,
+      .input input:valid ~ label {
+        background-color: white;
+        margin-inline: 0.6rem;
+        top: 6px;
+        left: 1.2rem;
+        opacity: 1;
+        transition: all 300ms ease-in-out;
+      }
+      @media only screen and (max-width: 950px) {
+        .layout {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          .intro {
+            width: 100%;
+            text-align: center;
+          }
+          .form {
+            width: 100%;
+            form {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-direction: column;
+            }
+            .submitbtn {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+          }
+        }
+      }
+      @media only screen and (max-width: 769px) {
+        .layout {
+          display: flex;
+          flex-direction: column;
+          .form {
+            width: 100%;
+            padding: 1rem;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="layout">
+      <div class="intro">
+        <h2>Subscribe To Our Newsletter</h2>
+        <p>Get the updates on new products and upcoming sales</p>
+      </div>
+      <div class="form">
+        <form>
+          <div class="group1">
+            <div class="input">
+              <input
+                type="text"
+                name="fname"
+                title="fname"
+                id="fname"
+                required
+              />
+              <label for="fname">Your First Name *</label>
+            </div>
+            <div class="input">
+              <input
+                type="email"
+                name="email"
+                title="email"
+                id="email"
+                required
+              />
+              <label for="email"> Your Email Address *</label>
+            </div>
+          </div>
+          <div class="group2">
+            <div class="input">
+              <input
+                type="text"
+                name="lname"
+                title="lname"
+                id="lname"
+                required
+              />
+              <label for="lname">Your Last Name *</label>
+            </div>
+
+            <div class="input">
+              <input
+                type="text"
+                name="catagories"
+                title="catagories"
+                id="catagories"
+                required
+              />
+              <label for="catagories"
+                >How Would You Catagorize Yourself? *</label
+              >
+            </div>
+          </div>
+          <div class="submitbtn">
+            <input type="submit" id="submit" value="Subscribe" />
+            <label for="submit">*Indicates required</label>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
